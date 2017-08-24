@@ -9,7 +9,8 @@ bot = telegram.Bot(TOKEN)
 
 
 def start(bot, update):
-    bot.sendMessage(chat_id = chat_id, text= "ciao a me")
+    update.message.reply_text("hello world")
+    bot.send_message(text="ciao mondo", chat_id = update.message.chat_id)
 
 def hello(bot, update):
     update.message.reply_text(
