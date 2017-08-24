@@ -2,7 +2,7 @@ import os
 from telegram.ext import *
 
 def start(bot, update):
-    update.message.reply_text('Hello World!')
+    bot.sendMessage(chat_id = chat_id, text= "ciao a me")
 
 def hello(bot, update):
     update.message.reply_text(
