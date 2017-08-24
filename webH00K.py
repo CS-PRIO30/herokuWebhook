@@ -16,7 +16,7 @@ def start(bot, update):
                    InlineKeyboardButton("start", callback_data='start'),
                    InlineKeyboardButton("stop", callback_data='stop'),
     ]
-reply_markup = InlineKeyboardMarkup(util.build_menu(button_list, n_cols=2))
+reply_markup = InlineKeyboardMarkup(build_menu(button_list, n_cols=2))
 bot.send_message(chat_id = update.message.chat_id , text="Benvenuto", reply_markup=reply_markup)
 
 def hello(bot, update):
