@@ -36,7 +36,10 @@ def hello(bot, update):
 def call(bot, update):
     update.message.reply_text(
         'Hello {}'.format(update.message.text))
-
+    
+def answerInlineQuery(bot,update):
+  print(query)
+  print(user_data)
 
 
 updater = Updater(TOKEN)
@@ -48,6 +51,7 @@ updater.start_webhook(listen="0.0.0.0",
   
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('hello', hello))
+updater.dispatcher.add_handler( InlineQueryHandler(callback = answerInlineQuery, pass_user_data = True ) )
 updater.dispatcher.add_handler(MessageHandler(Filters.text, callback=call))
 
 updater.idle()
