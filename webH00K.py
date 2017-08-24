@@ -1,6 +1,6 @@
 import os
 from telegram.ext import *
-import telegram
+from telegram import *
 
 TOKEN = os.environ['TOKEN_TELEGRAM']
 PORT = int(os.environ['PORT'])
