@@ -1,5 +1,5 @@
 import os
-from telegram.ext import Updater, CommandHandler
+from telegram.ext import *
 
 def start(bot, update):
     update.message.reply_text('Hello World!')
