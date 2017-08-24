@@ -8,6 +8,9 @@ def hello(bot, update):
     update.message.reply_text(
         'Hello {}'.format(update.message.from_user.first_name))
 
+def hello(bot, update):
+    update.message.reply_text(
+        'Hello {}'.format(update.message.text))
 
 TOKEN = os.environ['TOKEN_TELEGRAM']
 PORT = int(os.environ['PORT'])
@@ -21,5 +24,6 @@ updater.start_webhook(listen="0.0.0.0",
   
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('hello', hello))
+updater.dispatcher.add_handler(MessageHandler(callback=call))
 
 updater.idle()
