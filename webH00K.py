@@ -20,14 +20,14 @@ def build_menu(buttons,
     return menu
 
 def start(bot, update):
-    update.message.reply_text("hello world")
-    bot.send_message(text="ciao mondo", chat_id = update.message.chat_id)
+    #update.message.reply_text("hello world")
+    #bot.send_message(text="ciao mondo", chat_id = update.message.chat_id)
     button_list = [
                    InlineKeyboardButton("start", callback_data='start'),
                    InlineKeyboardButton("stop", callback_data='stop'),
     ]
     reply_markup = InlineKeyboardMarkup(build_menu(button_list, n_cols=2))
-    bot.send_message(chat_id = update.message.chat_id , text="Benvenuto", reply_markup=reply_markup)
+    bot.send_message(chat_id = update.message.chat_id , text="Benvenuto nuovo utente. Premi start per avviare il conteggio del tempo, mentre premi stop per fermarlo", reply_markup=reply_markup)
 
 def hello(bot, update):
     update.message.reply_text(
