@@ -1,5 +1,12 @@
 import os
 from telegram.ext import *
+import telegram
+
+TOKEN = os.environ['TOKEN_TELEGRAM']
+PORT = int(os.environ['PORT'])
+
+bot = telegram.Bot(TOKEN)
+
 
 def start(bot, update):
     bot.sendMessage(chat_id = chat_id, text= "ciao a me")
@@ -12,8 +19,7 @@ def call(bot, update):
     update.message.reply_text(
         'Hello {}'.format(update.message.text))
 
-TOKEN = os.environ['TOKEN_TELEGRAM']
-PORT = int(os.environ['PORT'])
+
 
 updater = Updater(TOKEN)
 
