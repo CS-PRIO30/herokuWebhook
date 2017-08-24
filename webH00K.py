@@ -8,7 +8,7 @@ def hello(bot, update):
     update.message.reply_text(
         'Hello {}'.format(update.message.from_user.first_name))
 
-def hello(bot, update):
+def call(bot, update):
     update.message.reply_text(
         'Hello {}'.format(update.message.text))
 
