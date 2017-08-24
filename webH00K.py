@@ -2,7 +2,7 @@ import os
 from telegram.ext import Updater
 
 
-TOKEN = os.environ['TELEGRAM_TOKEN']
+TOKEN = os.environ['TOKEN_TELEGRAM']
 PORT = int(os.environ['PORT'])
 updater = Updater(TOKEN)
 # add handlers
