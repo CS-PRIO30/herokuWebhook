@@ -1,4 +1,6 @@
 import os
+from telegram.ext import Updater
+
 
 TOKEN = os.environ['TELEGRAM_TOKEN']
 PORT = int(os.environ.get('PORT', '5000'))
