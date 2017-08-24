@@ -24,6 +24,6 @@ updater.start_webhook(listen="0.0.0.0",
   
 updater.dispatcher.add_handler(CommandHandler('start', start))
 updater.dispatcher.add_handler(CommandHandler('hello', hello))
-updater.dispatcher.add_handler(MessageHandler(callback=call))
+updater.dispatcher.add_handler(MessageHandler(Filters.text, callback=call))
 
 updater.idle()
