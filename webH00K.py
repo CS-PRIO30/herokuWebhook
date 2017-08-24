@@ -18,6 +18,6 @@ def echo(bot, update):
 
 
 dispatcher = updater.dispatcher
-dispatcher.addTelegramMessageHandler(echo)
+dispatcher.add_handler(echo)
 
 updater.idle()
