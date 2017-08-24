@@ -13,5 +13,11 @@ updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
 
-print("url set")
+def echo(bot, update):
+  bot.sendMessage(chat_id=update.message.chat_id, text=update.message.text)
+
+
+dispatcher = updater.dispatcher
+dispatcher.addTelegramMessageHandler(echo)
+
 updater.idle()
