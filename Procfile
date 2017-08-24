@@ -1,1 +1,1 @@
-worker: python webH00K.py
+web: python webH00K.py
