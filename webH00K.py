@@ -2,8 +2,8 @@ import os
 from telegram.ext import Updater
 
 
-TOKEN = os.environ['TELEGRAM_TOKEN']
-PORT = int(os.environ.get('PORT', '8443'))
+TOKEN = os.environ.get['TELEGRAM_TOKEN']
+PORT = int(os.environ.get['PORT'])
 updater = Updater(TOKEN)
 # add handlers
 updater.start_webhook(listen="0.0.0.0",
