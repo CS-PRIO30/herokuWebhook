@@ -8,6 +8,16 @@ PORT = int(os.environ['PORT'])
 
 bot = telegram.Bot(TOKEN)
 
+def build_menu(buttons,
+               n_cols,
+               header_buttons=None,
+               footer_buttons=None):
+    menu = [buttons[i:i + n_cols] for i in range(0, len(buttons), n_cols)]
+    if header_buttons:
+        menu.insert(0, header_buttons)
+    if footer_buttons:
+        menu.append(footer_buttons)
+    return menu
 
 def start(bot, update):
     update.message.reply_text("hello world")
@@ -16,8 +26,8 @@ def start(bot, update):
                    InlineKeyboardButton("start", callback_data='start'),
                    InlineKeyboardButton("stop", callback_data='stop'),
     ]
-reply_markup = InlineKeyboardMarkup(build_menu(button_list, n_cols=2))
-bot.send_message(chat_id = update.message.chat_id , text="Benvenuto", reply_markup=reply_markup)
+    reply_markup = InlineKeyboardMarkup(build_menu(button_list, n_cols=2))
+    bot.send_message(chat_id = update.message.chat_id , text="Benvenuto", reply_markup=reply_markup)
 
 def hello(bot, update):
     update.message.reply_text(
